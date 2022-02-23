@@ -136,7 +136,7 @@ int main(){
                     cout<<"Enter the number to be searched ";
                     cin>>num3;
                     l.searchnumber(num3);
-
+                    break;
         }
         
     }while(a!=8);
