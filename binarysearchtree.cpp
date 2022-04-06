@@ -68,14 +68,44 @@ void searchinbst(int val){
     }
 }
 
+void printinorder(tree * root){
+    
+    if(root!=NULL){
+    printinorder(root->left);
+    cout<<root->data<<" ";
+    printinorder(root->right);
+    }
+
+}
+void printpreorder(tree * root){
+    
+    if(root!=NULL){
+    cout<<root->data<<" ";
+    printpreorder(root->left);
+    printpreorder(root->right);
+    }
+
+}
+void printpostorder(tree * root){
+    
+    if(root!=NULL){
+    printpostorder(root->left);
+    printpostorder(root->right);
+    cout<<root->data<<" ";
+    
+    }
+
+}
+
 
 };
 int main(){
     BST b1;
+    tree *t;
     int choice;
     int val;
     do{
-        cout<<"Select from following option \n1.Insert\n2.Search\n3.Delete\n4.Print BST\nselect 0 to exit \n";
+        cout<<"Select from following option \n1.Insert\n2.Search\n3.Delete\n4.Print inorder BST\n5.Print preorder BST\n6.Print postorder BST\nselect 0 to exit \n";
         cin>>choice;
         switch (choice)
         {
@@ -92,7 +122,14 @@ int main(){
                 break;
         case 3://delete
                 break;
-        case 4://print
+        case 4:b1.printinorder(b1.rootnode);
+                cout<<"\n";
+                break;
+        case 5:b1.printpreorder(b1.rootnode);
+                cout<<"\n";
+                break;
+        case 6:b1.printpostorder(b1.rootnode);
+                cout<<"\n";
                 break;
         default:
             break;
