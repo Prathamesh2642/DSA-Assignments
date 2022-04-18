@@ -13,6 +13,7 @@ void initialize(int num){
 }
 void newlink(int a,int b){
     matrix[a][b]=1;
+    matrix[b][a]=1;
 
 }
 void displayadj(int num){
@@ -21,9 +22,9 @@ void displayadj(int num){
         cout<<k<<" ";
     }
     cout<<"\n";
-    for(int i=0;i<=5;i++){
+    for(int i=0;i<=num;i++){
         cout<<i<<" ";
-        for(int j=0;j<=5;j++){
+        for(int j=0;j<=num;j++){
             cout<<matrix[i][j]<<" ";
         }
         cout<<"\n";
