@@ -36,6 +36,9 @@ int indexreturn(int number){
         }
     }
 }
+void newValueInserted(int nvalue){
+    values[numnodes-1]=nvalue;
+}
 void newlink(int a,int b){
     int firstindex=indexreturn(a);
     int secondindex=indexreturn(b);
@@ -62,7 +65,7 @@ void displayadj(){
 int graph::numnodes=0;
 int main(){
     graph g;
-    int numnodes,nodes,choice,first,last,flag;
+    int numnodes,nodes,choice,first,last,nvalue;
     cout<<"Enter number of nodes ";
     cin>>numnodes;
     g.numnodes=numnodes;
@@ -82,7 +85,7 @@ int main(){
     }
     cout<<endl;
     do{
-        cout<<"Select operation to be performed \n1.Insert node\n2.Display Adjacency matrix\n3.exit\n" ;
+        cout<<"Select operation to be performed \n1.Insert node\n2.Display Adjacency matrix\n3.Insert new node in the graph\n4.Exit\n" ;
         cin>>choice;
         switch (choice)
         {
@@ -103,8 +106,16 @@ int main(){
         case 2:cout<<"-------------"<<endl;
                 g.displayadj();
                 break;
+        case 3:"\n---Insert new node---\n";
+                g.numnodes++;
+                cout<<"Enter new value ";
+                cin>>nvalue;
+                cout<<g.numnodes<<endl;
+                g.newValueInserted(nvalue);
+                cout<<"---value inserted---"<<endl;
+
         }
-    }while(choice!=3);
+    }while(choice!=4);
     
 
     return 0;
