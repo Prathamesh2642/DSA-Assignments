@@ -8,13 +8,13 @@ int matrix[max][max];
 int values[max];
 static int numnodes;
 // int adjlistarr[num];
-void initialize(int num){
-    for(int i=0;i<=num;i++){
-        for(int j=0;j<=num;j++){
+void initialize(){
+    for(int i=0;i<=numnodes;i++){
+        for(int j=0;j<=numnodes;j++){
             matrix[i][j]=0;
         }
     }
-    for(int i=0;i<max;i++){
+    for(int i=0;i<numnodes;i++){
         values[i]=0;
     }
 }
@@ -44,15 +44,15 @@ void newlink(int a,int b){
 }
 
 
-void displayadj(int num){
+void displayadj(){
     cout<<"  ";
-    for(int k=0;k<num;k++){
+    for(int k=0;k<numnodes;k++){
         cout<<values[k]<<" ";
     }
     cout<<"\n";
-    for(int i=0;i<num;i++){
+    for(int i=0;i<numnodes;i++){
         cout<<values[i]<<" ";
-        for(int j=0;j<num;j++){
+        for(int j=0;j<numnodes;j++){
             cout<<matrix[i][j]<<" ";
         }
         cout<<"\n";
@@ -68,7 +68,7 @@ int main(){
     g.numnodes=numnodes;
     g.matrix[numnodes][numnodes];
     g.values[numnodes];
-    g.initialize(numnodes);
+    g.initialize();
     int i=0;
     while(i<numnodes){
         cout<<"Enter the node value in the graph ";
@@ -101,7 +101,7 @@ int main(){
             break;
         
         case 2:cout<<"-------------"<<endl;
-                g.displayadj(numnodes);
+                g.displayadj();
                 break;
         }
     }while(choice!=3);
