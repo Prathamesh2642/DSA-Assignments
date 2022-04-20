@@ -80,6 +80,7 @@ int main(){
     for(int i=0;i<numnodes;i++){
         cout<<g.values[i]<<" ";
     }
+    cout<<endl;
     do{
         cout<<"Select operation to be performed \n1.Insert node\n2.Display Adjacency matrix\n3.exit\n" ;
         cin>>choice;
