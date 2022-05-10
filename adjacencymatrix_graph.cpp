@@ -113,7 +113,7 @@ int main(){
                 cout<<g.numnodes<<endl;
                 g.newValueInserted(nvalue);
                 cout<<"---value inserted---"<<endl;
-
+                break; 
         }
     }while(choice!=4);
     
