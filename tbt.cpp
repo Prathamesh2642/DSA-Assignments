@@ -5,7 +5,7 @@ public:
 int data;
 tree* left;
 tree* right;
-bool lthr,rthr;
+bool rthr;
 };
 class TBT{
 
@@ -30,6 +30,7 @@ void insertnode(int k){
             else if((temp->data>newnode->data) && (temp->left==NULL)){//insertion left
                 temp->left=newnode;
                 cout<<"Value inserted on left \n"<<endl;
+                temp->rthr=false;
                 temp->left->rthr=true;
                 break;
             }
@@ -40,16 +41,29 @@ void insertnode(int k){
                 temp->right=newnode;
                 cout<<"Value inserted on right \n"<<endl;
                 break;
-                temp->right->lthr=true;
+                // temp->right->lthr=true;
+                temp->rthr=false;
                 temp->right->rthr=true;
             }
+            // if((temp->data<newnode->data) && (temp->right==NULL) && (temp->left==NULL) && (newnode->data<rootnode->data)){
+            //     temp->rthr=true;
+            //     // temp->right->rthr=true;
+            // }
             else{
                 temp=temp->right;
             }
         }
     }
 }
-
+tree* maxvaluenode(tree* n) 
+{ 
+    tree* current = n;
+    // tree* temp; 
+    while (current && current->right != NULL) {
+        current = current->right;
+    }
+    current->rthr=true;
+} 
 void searchinbst(int val){
     tree *temp=rootnode;
     if(rootnode==NULL){
@@ -101,6 +115,18 @@ void printpostorder(tree * root){
     }
 
 }
+void check_tbt(tree *root)
+{
+    if(root == nullptr)
+        return;
+
+    check_tbt(root->left);
+
+    if(root->rthr)
+        cout<<root->data<<" ";
+
+    check_tbt(root->right);
+}
 
 
 };
@@ -135,6 +161,9 @@ int main(){
                 break;
         case 6:b1.printpostorder(b1.rootnode);
                 cout<<"\n";
+                break;
+        case 7:b1.maxvaluenode(b1.rootnode->left);
+                b1.check_tbt(b1.rootnode);
                 break;
         default:
             break;
