@@ -136,7 +136,7 @@ int main(){
     int choice;
     int val;
     do{
-        cout<<"Select from following option \n1.Insert\n2.Search\n3.Delete\n4.Print inorder BST\n5.Print preorder BST\n6.Print postorder BST\nselect 0 to exit \n";
+        cout<<"Select from following option \n1.Insert\n2.Search\n3.Delete\n4.Print inorder BST\n5.Print preorder BST\n6.Print postorder BST\n7.check tbt\nselect 0 to exit \n";
         cin>>choice;
         switch (choice)
         {
@@ -164,6 +164,7 @@ int main(){
                 break;
         case 7:b1.maxvaluenode(b1.rootnode->left);
                 b1.check_tbt(b1.rootnode);
+                cout<<endl;
                 break;
         default:
             break;
