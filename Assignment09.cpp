@@ -9,21 +9,21 @@ class Heap {
   int capacity; 
   int heap_size;
 
-  Heap(int cap) {
+  Heap(int cap) { //constructor - initialization
     heap_size = cap;
     capacity = cap;
     harr = new int[cap];
   }
-  void UnsortedArray() {
+  void UnsortedArray() { // getting usorted array from the user
     cout << "Enter " << capacity << " no of elements to sort using HEAPSORT" << endl;
     for (int i = 0; i < capacity; i++)
       cin >> harr[i];
   }
-  int left(int i) {
+  int left(int i) { //getting leftchild of the tree
     return (2 * i + 1);
   }
 
-  int right(int i) {
+  int right(int i) {//getting rightchild of the tree
     return (2 * i + 2);
   }
   void MinHeapify(int i) {
@@ -56,7 +56,7 @@ class Heap {
     return root;
   }
 
-  void heapSort() {
+  void heapSort() { //actual sorting of the array
     int temp[capacity];
     for (int j = 0; j < capacity; j++) {
       temp[j] = extractMin();
