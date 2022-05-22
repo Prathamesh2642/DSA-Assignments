@@ -75,7 +75,7 @@ int main() {
   for (int i = s / 2 - 1; i >= 0; i--) {
     h.MinHeapify(i);
   }
-  cout << "Heap Sorted Array :" << endl;
+  cout << "Max heap :" << endl;
   h.heapSort();
 
 }
