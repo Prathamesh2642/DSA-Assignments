@@ -41,7 +41,7 @@ int main()
     i1.open("Sample.txt");
 
     cout << "\nReading the File:\n";
-
+    int flag=0;
     while (i1)
     {
         getline(i1, s1);
@@ -50,14 +50,15 @@ int main()
         if (no == index)
         {
             cout << "Found the record....\n";
-
+            flag++;
             cout << s1 << endl;
             break;
         }
-          else{
-    cout << "Not found !\n";
-    return 0;
+
+    
     }
+    if(flag==0){
+    cout << "Not found !\n";    
     }
-  
+  return 0;
 }
